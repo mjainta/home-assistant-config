@@ -1,0 +1,15 @@
+# Exclude ha-config, but dont exclude ha-config/custom_components
+ha-config/*
+!ha-config/custom_components/
+# Exclude ha-config/custom_components, but dont exclude pyton files in ha-config/custom_components
+ha-config/custom_components/*
+!ha-config/custom_components/*.py
+
+.vscode/
+venv/
+
+!*.yaml
+secrets.yaml
+
+
+
