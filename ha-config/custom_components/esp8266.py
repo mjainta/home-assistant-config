@@ -1,6 +1,8 @@
 import random
 import requests
 
+from homeassistant.const import EVENT_HOMEASSISTANT_STOP
+
 # The domain of your component. Should be equal to the name of your component.
 DOMAIN = 'esp8266'
 
@@ -61,6 +63,7 @@ def setup(hass, config):
     # Listen for when my_cool_event is fired
     hass.bus.listen('start_show', start_show)
     hass.bus.listen('stop_show', stop_show)
+    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_show)
 
     def send_random_color():
         payload = {
