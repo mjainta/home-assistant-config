@@ -1,3 +1,3 @@
 random_light:
   sequence:
-    - service: esp8266.set_color_random
+    - service: enledment.set_color_random

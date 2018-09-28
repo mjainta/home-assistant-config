@@ -13,9 +13,6 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-# Show links to resources in log and frontend
-introduction:
-
 # Enables the frontend
 frontend:
 
@@ -36,7 +33,7 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -50,22 +47,10 @@ logbook:
 # Enables a map showing the location of tracked devices
 map:
 
-# Track the sun
-sun:
-
-# Weather prediction
-sensor:
-  - platform: yr
-
-# Text to speech
-tts:
-  - platform: google
-
-# Cloud
-cloud:
+enledment:
+  friendly_name: "enLEDment"
+  server: 192.168.4.1
 
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
-esp8266:
