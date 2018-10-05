@@ -1,0 +1,42 @@
+- name: Sunrise
+  entities:
+    light.andrea:
+      state: on
+      xy_color: [0.4575,0.4099]
+      brightness_pct: 30
+      transition: 900
+    light.marta:
+      state: on
+      xy_color: [0.6014,0.3789]
+      brightness_pct: 30
+      transition: 900
+
+- name: Wakeup
+  entities:
+    light.bedroom:
+      state: on
+      xy_color: [0.3582,0.2875]
+      brightness_pct: 30
+    light.stairs:
+      state: on
+      brightness: 77
+    light.kitchen:
+      state: on
+      brightness: 77
+
+- name: Sunset
+  entities:
+    light.living_room_ceiling:
+      state: on
+      color_temp: 400
+      brightness_pct: 60
+      transition: 900
+    light.kitchen:
+      state: on
+      brightness_pct: 30
+
+- name: Alarm
+  entities:
+    enledment.alarm:
+      state: on
+      color: [255, 0, 0]
