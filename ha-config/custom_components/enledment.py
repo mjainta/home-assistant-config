@@ -11,7 +11,8 @@ DEFAULT_TOPIC = 'home-assistant/enledment'
 
 REQUIREMENTS=['requests']
 
-esp_address = "192.168.4.1"
+#esp_address = "192.168.4.1"
+esp_address = "192.168.2.109"
 
 def setup(hass, config):
     """Initially turn off LED light"""
