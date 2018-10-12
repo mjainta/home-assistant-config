@@ -8,7 +8,7 @@ input_select:
     name: Alarm time
     initial: "07:00"
     options:
-      - "16:25"
+      - "09:39"
       - "00:00"
       - "00:15"
       - "00:30"
@@ -109,7 +109,7 @@ input_select:
 alarm_clock:
   time: input_select.wake_up_time
   master_control: input_boolean.alarm_clock
-  entity_id: scene.alarm
+  entity_id: scene.wakeup
   additional:
-    time: 0
-    entity_id: scene.alarm
+    time: -900
+    entity_id: scene.sunset

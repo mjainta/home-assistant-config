@@ -13,16 +13,14 @@
 
 - name: Wakeup
   entities:
-    light.bedroom:
-      state: on
-      xy_color: [0.3582,0.2875]
-      brightness_pct: 30
-    light.stairs:
-      state: on
-      brightness: 77
-    light.kitchen:
-      state: on
-      brightness: 77
+    light.mqtt_json_light_2:
+      state: "ON"
+      color: {
+        "r": 200,
+        "g": 150,
+        "b": 100,
+      }
+      transition: 900
 
 - name: Sunset
   entities:
@@ -37,6 +35,10 @@
 
 - name: Alarm
   entities:
-    enledment.alarm:
-      state: on
-      color: [255, 0, 0]
+    light.mqtt_json_light_2:
+      state: "ON"
+      color: {
+        "r": 200,
+        "g": 150,
+        "b": 100,
+      }
