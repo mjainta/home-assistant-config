@@ -203,7 +203,6 @@ class Alarm(object):
 
     self.hass.services.call(
       'homeassistant', 'turn_on', {'entity_id': self.entity_id})
-      #'mqtt', 'publish', {'topic': 'home/ESP_LED/set', 'payload': '{"color": {"r": 0, "g": 255, "b": 255}, "transition": 5}'})
 
   def remove_listener(self):
     self.unsubscribe()

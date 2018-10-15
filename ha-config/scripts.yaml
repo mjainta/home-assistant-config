@@ -1,3 +1,0 @@
-random_light:
-  sequence:
-    - service: enledment.set_color_random
