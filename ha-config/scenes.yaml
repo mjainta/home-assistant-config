@@ -1,44 +1,25 @@
 - name: Sunrise
   entities:
-    light.andrea:
+    light.mqtt_json_light_2:
       state: on
-      xy_color: [0.4575,0.4099]
-      brightness_pct: 30
-      transition: 900
-    light.marta:
-      state: on
-      xy_color: [0.6014,0.3789]
-      brightness_pct: 30
+      rgb_color: [200, 150, 100]
       transition: 900
 
 - name: Wakeup
   entities:
     light.mqtt_json_light_2:
-      state: "ON"
-      color: {
-        "r": 200,
-        "g": 150,
-        "b": 100,
-      }
-      transition: 900
-
-- name: Sunset
-  entities:
-    light.living_room_ceiling:
       state: on
-      color_temp: 400
-      brightness_pct: 60
-      transition: 900
-    light.kitchen:
-      state: on
-      brightness_pct: 30
+      rgb_color: [200, 150, 100]
 
-- name: Alarm
+- name: Ambient Disco
   entities:
     light.mqtt_json_light_2:
-      state: "ON"
-      color: {
-        "r": 200,
-        "g": 150,
-        "b": 100,
-      }
+      state: on
+      effect: colorfade_fast
+
+
+- name: Ambient Slowfade
+  entities:
+    light.mqtt_json_light_2:
+      state: on
+      effect: colorfade_slow

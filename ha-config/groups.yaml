@@ -1,5 +1,5 @@
 alarm_clock:
-  name: Morning Alarm & Wakeup
+  name: Morning Alarm & Wakeup Light
   entities:
     - input_boolean.alarm_clock
     - input_select.wake_up_time
