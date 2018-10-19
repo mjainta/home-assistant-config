@@ -14,6 +14,8 @@ _LOGGER = logging.getLogger(__name__)
 DOMAIN = 'alarm_clock'
 
 CONF_TIME = 'time'
+CONF_TIME_HOUR = 'time_hour'
+CONF_TIME_MIN = 'time_min'
 CONF_ENTITY_ID = 'entity_id'
 CONF_MASTER_CONTROL = 'master_control'
 CONF_ADDITIONAL = 'additional'
@@ -26,6 +28,8 @@ ADDITIONAL_SCHEMA = vol.Schema({
 CONFIG_SCHEMA = vol.Schema({
   DOMAIN: vol.Schema({
     vol.Required(CONF_TIME): cv.string,
+    vol.Required(CONF_TIME_HOUR): cv.positive_int,
+    vol.Required(CONF_TIME_MIN): cv.positive_int,
     vol.Required(CONF_ENTITY_ID): cv.string,
     vol.Optional(CONF_MASTER_CONTROL, default=''): cv.string,
     vol.Optional(CONF_ADDITIONAL, default=[]): ADDITIONAL_SCHEMA,
@@ -35,6 +39,9 @@ CONFIG_SCHEMA = vol.Schema({
 
 def setup(hass, config):
   time = config[DOMAIN].get(CONF_TIME)
+  time_hour = config[DOMAIN].get(CONF_TIME_HOUR)
+  time_min = config[DOMAIN].get(CONF_TIME_MIN)
+  time = "{hour}:{min}".format(hour=time_hour, min=time_min)
   entity_id = config[DOMAIN].get(CONF_ENTITY_ID)
   master_control = config[DOMAIN].get(CONF_MASTER_CONTROL)
 

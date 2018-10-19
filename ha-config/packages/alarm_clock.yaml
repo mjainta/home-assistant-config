@@ -2,6 +2,33 @@ input_boolean:
   alarm_clock:
     name: Enable Alarm
     icon: mdi:calendar
+  alarm_weekdays:
+    name: Weekdays
+    icon: mdi:calendar-week
+  alarm_weekend:
+    name: Weekend
+    icon: mdi:calendar
+  alarm_mon:
+    name: Monday
+    icon: mdi:calendar-clock
+  alarm_tue:
+    name: Tuesday
+    icon: mdi:calendar-clock
+  alarm_wed:
+    name: Wednesday
+    icon: mdi:calendar-clock
+  alarm_thu:
+    name: Thursday
+    icon: mdi:calendar-clock
+  alarm_fri:
+    name: Friday
+    icon: mdi:calendar-clock
+  alarm_sat:
+    name: Saturday
+    icon: mdi:calendar-clock
+  alarm_sun:
+    name: Sunday
+    icon: mdi:calendar-clock
 
 input_select:
   wake_up_time:
@@ -105,8 +132,40 @@ input_select:
       - "23:30"
       - "23:45"
 
+input_number:
+  alarm_regular_hour:
+    name: Hour
+    initial: 6
+    min: 0
+    max: 24
+    step: 1
+    icon: mdi:timer
+  alarm_regular_min:
+    name: Minute
+    initial: 0
+    min: 0
+    max: 60
+    step: 5
+    icon: mdi:timer
+  alarm_individual_hour:
+    name: Hour
+    initial: 6
+    min: 0
+    max: 24
+    step: 1
+    icon: mdi:timer
+  alarm_individual_min:
+    name: Minute
+    initial: 0
+    min: 0
+    max: 60
+    step: 5
+    icon: mdi:timer
+
 alarm_clock:
   time: input_select.wake_up_time
+  time_hour: input_number.alarm_regular_hour.
+  time_min: input_number.alarm_regular_min.
   master_control: input_boolean.alarm_clock
   entity_id: scene.wakeup
   additional:
