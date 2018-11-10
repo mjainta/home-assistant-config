@@ -15,7 +15,7 @@ dev:
 
 .PHONY: create-venv
 create-venv:
-	python -m venv $(VENV_NAME) && \
+	python3 -m venv $(VENV_NAME) && \
 	${PIP} install -r requirements_all.txt
 
 hass:

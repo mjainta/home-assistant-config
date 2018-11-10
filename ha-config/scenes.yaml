@@ -1,0 +1,25 @@
+- name: Sunrise
+  entities:
+    light.mqtt_json_light_2:
+      state: on
+      rgb_color: [200, 150, 100]
+      transition: 900
+
+- name: Wakeup
+  entities:
+    light.mqtt_json_light_2:
+      state: on
+      rgb_color: [200, 150, 100]
+
+- name: Ambient Disco
+  entities:
+    light.mqtt_json_light_2:
+      state: on
+      effect: colorfade_fast
+
+
+- name: Ambient Slowfade
+  entities:
+    light.mqtt_json_light_2:
+      state: on
+      effect: colorfade_slow

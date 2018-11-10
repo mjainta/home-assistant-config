@@ -19,3 +19,7 @@ make hass
 ```shell
 make check-config
 ```
+
+# Thanks to andreacampi for the alarm_clock component!
+
+https://github.com/andreacampi/dothomeassistant/blob/master/custom_components/alarm_clock.py

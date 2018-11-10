@@ -11,7 +11,8 @@ DEFAULT_TOPIC = 'home-assistant/enledment'
 
 REQUIREMENTS=['requests']
 
-esp_address = "192.168.4.1"
+#esp_address = "192.168.4.1"
+esp_address = "192.168.2.109"
 
 def setup(hass, config):
     """Initially turn off LED light"""
@@ -65,9 +66,23 @@ def setup(hass, config):
     def stop_show(event):
         hass.states.set('enledment.show', 'off')
 
+    def alarm(event):
+        hass.states.set('enledment.show', 'off')
+        hass.states.set('enledment.alarm', 'on')
+        payload = {
+            "red": 255,
+            "green": 0,
+            "blue": 0,
+            "fade_time": 0,
+        }
+        print("JSON PAYLOAD", payload)
+        requests.post("http://" + esp_address + "/api/fade?", json=payload)
+
+
     # Listen for when my_cool_event is fired
     hass.bus.listen('start_show', start_show)
     hass.bus.listen('stop_show', stop_show)
+    hass.bus.listen('alarm', alarm)
     hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_show)
 
     def send_random_color():

@@ -1,0 +1,23 @@
+alarm_clock_regular:
+  name: Morning Alarm & Wakeup Light
+  entities:
+    - input_boolean.alarm_clock
+    - input_boolean.alarm_weekdays
+    - input_boolean.alarm_weekend
+    - input_select.wake_up_time
+    - input_number.alarm_regular_hour
+    - input_number.alarm_regular_min
+
+alarm_clock_individual:
+  name: Individual Alarm
+  entities:
+    - input_boolean.alarm_clock
+    - input_boolean.alarm_mon
+    - input_boolean.alarm_tue
+    - input_boolean.alarm_wed
+    - input_boolean.alarm_thu
+    - input_boolean.alarm_fri
+    - input_boolean.alarm_sat
+    - input_boolean.alarm_sun
+    - input_number.alarm_individual_hour
+    - input_number.alarm_individual_min
